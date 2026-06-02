@@ -18,6 +18,7 @@ def fetch_data(tickers, start, end):
     df = yf.download(tickers, start=start, end=end, progress=False)
     if isinstance(tickers, (list, tuple)):
         close = df['Close'].copy()
+        close = close.loc[:, tickers]
     else:
         close = df['Close'].to_frame()
     close.index = pd.to_datetime(close.index)
@@ -118,12 +119,12 @@ def main():
     st.title('Pairs Trading Backtester')
     st.markdown(
         'Build and compare a pairs trading signal for two co-moving assets using Python, ' 
-        'cointegration, OLS regression, and interactive Streamlit dashboards.'
+        'cointegration, OLS regression, and interactive Streamlit dashboards. Default asset is SPY (S&P500 ETF).'
     )
 
     with st.sidebar:
         st.header('Inputs')
-        tickers = st.text_input('Tickers (comma-separated)', '^GSPC, ^IXIC')
+        tickers = st.text_input('Tickers (comma-separated)', 'SPY, QQQ')
         start_date = st.date_input('Start date', datetime.datetime(2018, 1, 1))
         end_date = st.date_input('End date', datetime.date.today())
         train_frac = st.slider('Train split', 0.5, 0.9, 0.7, 0.05)

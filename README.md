@@ -15,4 +15,4 @@ pip install -r requirements.txt
 streamlit run streamlit_app.py
 ```
 
-Open `streamlit_app.py` with Streamlit and use the sidebar to tune tickers, date range, and strategy parameters.
+Open `streamlit_app.py` with Streamlit and use the sidebar to tune tickers, date range, and strategy parameters. The default dashboard example uses `SPY` as the S&P500 ETF base asset.
