@@ -1,9 +1,9 @@
 # Pairs Trading Backtester (Notebook)
 
-This repository contains a ready-to-run Jupyter notebook implementing a pairs/spread trading backtest suitable for interview demonstration.
+This repository contains a ready-to-run Streamlit dashboard implementing a pairs/spread trading backtester suitable for interview demonstration.
 
 Contents
-- `pairs_backtester.ipynb`: Interactive notebook with data fetching (yfinance), cointegration testing, OLS hedge ratio, signal generation, vectorized backtest, and performance comparison (train vs test).
+- `streamlit_app.py`: Streamlit dashboard with data fetching, cointegration testing, OLS hedge ratio, signal generation, vectorized backtest, and performance comparison.
 - `requirements.txt`: Python dependencies.
 
 Quick start
@@ -11,8 +11,8 @@ Quick start
 ```bash
 python -m venv .venv
 source .venv/bin/activate
-pip install -r pairs_trading_repo/requirements.txt
-jupyter lab  # or jupyter notebook
+pip install -r requirements.txt
+streamlit run streamlit_app.py
 ```
 
-Open `pairs_trading_repo/pairs_backtester.ipynb` and run all cells.
+Open `streamlit_app.py` with Streamlit and use the sidebar to tune tickers, date range, and strategy parameters.

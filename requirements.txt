@@ -7,4 +7,5 @@ statsmodels
 scikit-learn
 yfinance
 backtrader
+streamlit
 jupyterlab
